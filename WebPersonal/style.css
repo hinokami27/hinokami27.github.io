@@ -859,5 +859,6 @@ h1:hover{
       position: relative;
       z-index: 982;
       top: -160px;
+      margin-bottom: -160px;
    }
  }
