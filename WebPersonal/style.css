@@ -123,6 +123,7 @@ h1:hover{
    top: -170px;
    background:url(images/edubackground.png) no-repeat;
    background-size: 100vw 100%;
+   scroll-margin-top: 100px;
 }
 
 .edutitle{
