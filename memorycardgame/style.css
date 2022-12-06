@@ -1,0 +1,48 @@
+.card{
+   border: 2px solid black;
+   background: linear-gradient(#1E5799, #7db9e8);
+   width: 140px;
+   height: 140px;
+   font-size: 40px;
+   display: grid;
+   place-items: center;
+   color: white;
+   text-align: center;
+}
+.card:hover{
+   cursor: pointer;
+}
+.name{
+   font-size: 30px;
+}
+#container{
+   margin: 0 auto;
+   width: 600px;
+   display: grid;
+   gap: 20px;
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr;
+   grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+#pointstext, #winMsg{
+   width: fit-content;
+   margin: 0 auto;
+   font-size: 20px;
+   font-weight: bold;
+   grid-column: span 4;
+   color:#1E5799 ;
+}
+#winMsg{
+   font-size: 30px;
+   color: #7db9e8;
+}
+
+.card:nth-of-type(even){
+   border-color: red;
+}
+.matched{
+    pointer-events: none; 
+   }
+.matched.active {
+    pointer-events: auto; 
+   }

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>Memory Card Game</title>
+   <script src="../jquery/jquery.js"></script>
+   <script>
+      $(document).ready(function(){
+         var match1,match2,number1,number2;
+         var matching=false;
+         var card1,card2;
+         var points=0;
+         $(".name").hide();
+         $(".card").hover(function(){
+            matching=false;
+            if($(this).classList.contains(matched)==undefined){
+            $(this).css("color","#5babe9")
+            $(this).css({background:'linear-gradient(#BED34A, #72A905)'})
+            }
+         },function(){
+            if($(this).classList.contains(matched)==undefined){
+            $(this).css("color","white")
+            if(matching==false){
+            $(this).css({background:'linear-gradient(#1E5799, #7db9e8)'})
+            }
+         }
+         })
+         $(".card").click(function(){
+            if(!match1 && match1!=$(this).find("p:last-of-type").html() ){
+               match1=$(this).find("p:last-of-type").html();
+               number1=$(this).find("p:first-of-type").html()
+               card1=$(this)
+            }
+            number2=$(this).find("p:first-of-type").html();
+            var match2=$(this).find("p:last-of-type").html();
+            card2=$(this)
+            console.log(match1,number1)
+            console.log(match2,number2)
+            $(this).find(".number").hide();
+            $(this).find(".name").show();
+            if(match1==match2 && number1!=number2){
+               $(this).css({background:"gray", color:"white"})
+               card1.css({background:"gray", color:"white"})
+               matching=true;
+               match1="";
+               $(this).addClass("matched")
+               card1.addClass("matched")
+               match2="";
+               points++;
+            }
+            else if(match1!=match2)
+            {
+               setTimeout(function(){
+               
+               card1.find(".number").show();
+               card1.find(".name").hide();
+               card2.find(".number").show();
+               card2.find(".name").hide();
+               },1000)
+               match2="";
+               match1="";
+               console.log(match1,number1)
+               console.log(match2,number2)
+            }
+            $("#points").html(points);
+            if(points==8){
+               $("#winMsg").html("You win!!!")
+            }
+         })
+      })
+   </script>
+</head>
+<body>
+   <div id="container">
+      <div class="card"><p class="number">1</p><p class="name">Carl Cox</p></div>
+      <div class="card"><p class="number">2</p><p class="name">John Doe</p></div>
+      <div class="card"><p class="number">3</p><p class="name">Derek Morgan</p></div>
+      <div class="card"><p class="number">4</p><p class="name">Sheldon Cooper</p></div>
+      <div class="card"><p class="number">5</p><p class="name">Patrick Bateman</p></div>
+      <div class="card"><p class="number">6</p><p class="name">Rick Sanchez</p></div>
+      <div class="card"><p class="number">7</p><p class="name">Sheldon Cooper</p></div>
+      <div class="card"><p class="number">8</p><p class="name">Spencer Reid</p></div>
+      <div class="card"><p class="number">9</p><p class="name">Derek Morgan</p></div>
+      <div class="card"><p class="number">10</p><p class="name">John Doe</p></div>
+      <div class="card"><p class="number">11</p><p class="name">Marty Byrde</p></div>
+      <div class="card"><p class="number">12</p><p class="name">Rick Sanchez</p></div>
+      <div class="card"><p class="number">13</p><p class="name">Patrick Bateman</p></div>
+      <div class="card"><p class="number">14</p><p class="name">Marty Byrde</p></div>
+      <div class="card"><p class="number">15</p><p class="name">Carl Cox</p></div>
+      <div class="card"><p class="number">16</p><p class="name">Spencer Reid</p></div>
+      <p id="pointstext">Points: <span id="points">0</span></p>
+      <p id="winMsg"></p>
+   </div>
+</body>
+</html>
