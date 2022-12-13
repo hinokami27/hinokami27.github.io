@@ -16,12 +16,12 @@
          $(".name").hide();
          $(".card").hover(function(){
             matching=false;
-            if($(this).classList.contains(matched)==undefined){
+            if($(this).hasClass("matched")==false){
             $(this).css("color","#5babe9")
             $(this).css({background:'linear-gradient(#BED34A, #72A905)'})
             }
          },function(){
-            if($(this).classList.contains(matched)==undefined){
+            if($(this).hasClass("matched")==false){
             $(this).css("color","white")
             if(matching==false){
             $(this).css({background:'linear-gradient(#1E5799, #7db9e8)'})
