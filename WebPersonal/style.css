@@ -33,7 +33,7 @@ body{
    grid-template-columns: 64px 51fr 50fr; 
 } 
 .dummy{
-   width: 64px;
+   width: 86px;
    height: 96px;
 }
 .microchip{
@@ -274,22 +274,40 @@ h1:hover{
 .sectioncontent2{
    height: 82%;
    display: grid;
-   grid-template-columns: 100%;
-   grid-template-rows: 25%;
+   grid-template-columns: 1fr 1fr;
+   grid-template-rows: 1fr 1fr 1fr;
 }
 .language{
-   font-size: 30px;
+   font-size: 26px;
    flex-shrink: 0;
    flex-grow: 0;
    display: flex;
    align-items: center;
+   flex-direction: column;
+   justify-content: center;
    font-weight: bold;
+   /* margin: 0px 6px; */
+}
+.language:nth-of-type(even){
+   border-left: 2px dashed #3A3A3A;
    border-bottom: 2px dashed #3A3A3A;
-   margin: 0px 6px;
+   margin-right: 18px;
+}
+.language:nth-of-type(odd){
+   /* border-left: 2px dashed #3A3A3A; */
+   border-bottom: 2px dashed #3A3A3A;
+   margin-left: 21px;
+}
+.language:nth-of-type(5){
+   /* border-left: 2px dashed #3A3A3A; */
+   border-bottom: none;
 }
 .language img{
+   width: 64px;
+   height: 64px;
    margin-left: 24px;
-   margin-right: 80px;
+   margin-bottom: 10px;
+   margin-right: 20px;
    transition: 0.4s;
 }
 .language img:hover{
