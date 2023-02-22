@@ -33,7 +33,7 @@ body{
    grid-template-columns: 64px 51fr 50fr; 
 } 
 .dummy{
-   width: 86px;
+   width: 86px; 
    height: 96px;
 }
 .microchip{
